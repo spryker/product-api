@@ -18,7 +18,7 @@ interface EntityMapperInterface
     public function toEntity(array $data);
 
     /**
-     * @param \Generated\Shared\Transfer\ProductApiTransfer[] $productApiDataCollection
+     * @param array $productApiDataCollection
      *
      * @return \Orm\Zed\Product\Persistence\SpyProductAbstract[]
      */
