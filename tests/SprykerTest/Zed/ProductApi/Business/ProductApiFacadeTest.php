@@ -39,17 +39,11 @@ class ProductApiFacadeTest extends Unit
      */
     protected $productAbstractTransfer;
 
-    /**
-     * @return void
-     */
     protected function _before(): void
     {
         $this->productAbstractTransfer = $this->tester->haveProductAbstract();
     }
 
-    /**
-     * @return void
-     */
     public function testGet(): void
     {
         $productApiFacade = new ProductApiFacade();
@@ -67,9 +61,6 @@ class ProductApiFacadeTest extends Unit
         $this->assertNotEmpty($newData[ProductApiTransfer::ID_PRODUCT_ABSTRACT]);
     }
 
-    /**
-     * @return void
-     */
     public function testFind(): void
     {
         $productApiFacade = new ProductApiFacade();
@@ -87,9 +78,6 @@ class ProductApiFacadeTest extends Unit
         $this->assertNotEmpty($data[0][ProductApiTransfer::ID_PRODUCT_ABSTRACT]);
     }
 
-    /**
-     * @return void
-     */
     public function testFindConditionsAndSortAndLimit(): void
     {
         //Arrange
@@ -124,9 +112,6 @@ class ProductApiFacadeTest extends Unit
         $this->assertGreaterThan(2, $apiPaginationTransfer->getPageTotal());
     }
 
-    /**
-     * @return void
-     */
     public function testFindOutOfBounds(): void
     {
         $this->expectException('Symfony\Component\HttpKernel\Exception\NotFoundHttpException');
@@ -144,9 +129,6 @@ class ProductApiFacadeTest extends Unit
         $productApiFacade->findProducts($apiRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testAdd(): void
     {
         $productApiFacade = new ProductApiFacade();
@@ -170,9 +152,6 @@ class ProductApiFacadeTest extends Unit
         $this->assertNotEmpty($newData['idProductAbstract']);
     }
 
-    /**
-     * @return void
-     */
     public function testEdit(): void
     {
         $productApiFacade = new ProductApiFacade();
@@ -199,9 +178,6 @@ class ProductApiFacadeTest extends Unit
         $this->assertSame($data['sku'], $newData['sku']);
     }
 
-    /**
-     * @return void
-     */
     public function testUpdate(): void
     {
         $productApiFacade = new ProductApiFacade();
@@ -221,9 +197,6 @@ class ProductApiFacadeTest extends Unit
         $this->assertInstanceOf(ApiItemTransfer::class, $resultTransfer);
     }
 
-    /**
-     * @return array
-     */
     protected function getJsonDataForPagination(): array
     {
         return [

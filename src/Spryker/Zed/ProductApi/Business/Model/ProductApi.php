@@ -63,14 +63,6 @@ class ProductApi implements ProductApiInterface
      */
     protected $apiFacade;
 
-    /**
-     * @param \Spryker\Zed\ProductApi\Dependency\QueryContainer\ProductApiToApiQueryBuilderInterface $apiQueryBuilderQueryContainer
-     * @param \Spryker\Zed\ProductApi\Persistence\ProductApiQueryContainerInterface $queryContainer
-     * @param \Spryker\Zed\ProductApi\Business\Mapper\EntityMapperInterface $entityMapper
-     * @param \Spryker\Zed\ProductApi\Business\Mapper\TransferMapperInterface $transferMapper
-     * @param \Spryker\Zed\ProductApi\Dependency\Facade\ProductApiToProductInterface $productFacade
-     * @param \Spryker\Zed\ProductApi\Dependency\Facade\ProductApiToApiFacadeInterface $apiFacade
-     */
     public function __construct(
         ProductApiToApiQueryBuilderInterface $apiQueryBuilderQueryContainer,
         ProductApiQueryContainerInterface $queryContainer,
@@ -270,11 +262,6 @@ class ProductApi implements ProductApiInterface
         return $columnSelectionTransfer;
     }
 
-    /**
-     * @param int $idProductAbstract
-     *
-     * @return \Generated\Shared\Transfer\ApiItemTransfer
-     */
     protected function createAbstractProductNotFoundApiItemTransfer(int $idProductAbstract): ApiItemTransfer
     {
         $apiValidationErrorTransfer = $this->createApiValidationErrorTransfer(
@@ -288,12 +275,6 @@ class ProductApi implements ProductApiInterface
             ->addValidationError($apiValidationErrorTransfer);
     }
 
-    /**
-     * @param string $message
-     * @param string|null $field
-     *
-     * @return \Generated\Shared\Transfer\ApiValidationErrorTransfer
-     */
     protected function createApiValidationErrorTransfer(string $message, ?string $field = null): ApiValidationErrorTransfer
     {
         return (new ApiValidationErrorTransfer())

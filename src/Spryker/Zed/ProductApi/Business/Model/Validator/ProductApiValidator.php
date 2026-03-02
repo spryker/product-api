@@ -57,12 +57,6 @@ class ProductApiValidator implements ProductApiValidatorInterface
         return $errors;
     }
 
-    /**
-     * @param string $field
-     * @param string $message
-     *
-     * @return \Generated\Shared\Transfer\ApiValidationErrorTransfer
-     */
     protected function createApiValidationErrorTransfer(string $field, string $message): ApiValidationErrorTransfer
     {
         return (new ApiValidationErrorTransfer())

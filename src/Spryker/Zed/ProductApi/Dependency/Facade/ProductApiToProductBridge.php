@@ -34,23 +34,11 @@ class ProductApiToProductBridge implements ProductApiToProductInterface
         return $this->productFacade->findProductAbstractById($idProductAbstract);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
-     * @param array $productConcreteCollection
-     *
-     * @return int
-     */
     public function addProduct(ProductAbstractTransfer $productAbstractTransfer, array $productConcreteCollection): int
     {
         return $this->productFacade->addProduct($productAbstractTransfer, $productConcreteCollection);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
-     * @param array $productConcreteCollection
-     *
-     * @return int
-     */
     public function saveProduct(ProductAbstractTransfer $productAbstractTransfer, array $productConcreteCollection): int
     {
         return $this->productFacade->saveProduct($productAbstractTransfer, $productConcreteCollection);

@@ -18,19 +18,7 @@ interface ProductApiToProductInterface
      */
     public function findProductAbstractById($idProductAbstract): ?ProductAbstractTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
-     * @param array $productConcreteCollection
-     *
-     * @return int
-     */
     public function addProduct(ProductAbstractTransfer $productAbstractTransfer, array $productConcreteCollection): int;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAbstractTransfer $productAbstractTransfer
-     * @param array $productConcreteCollection
-     *
-     * @return int
-     */
     public function saveProduct(ProductAbstractTransfer $productAbstractTransfer, array $productConcreteCollection): int;
 }

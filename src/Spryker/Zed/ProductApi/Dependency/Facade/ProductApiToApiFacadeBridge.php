@@ -36,12 +36,6 @@ class ProductApiToApiFacadeBridge implements ProductApiToApiFacadeInterface
         return $this->apiFacade->createApiCollection($transfers);
     }
 
-    /**
-     * @param \Spryker\Shared\Kernel\Transfer\AbstractTransfer|null $transfer
-     * @param string|null $id
-     *
-     * @return \Generated\Shared\Transfer\ApiItemTransfer
-     */
     public function createApiItem(?AbstractTransfer $transfer = null, ?string $id = null): ApiItemTransfer
     {
         return $this->apiFacade->createApiItem($transfer, $id);

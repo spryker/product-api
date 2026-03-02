@@ -124,11 +124,6 @@ class ProductApiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addApiFacade(Container $container): Container
     {
         $container->set(static::FACADE_API, function (Container $container) {
